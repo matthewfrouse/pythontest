@@ -29,7 +29,7 @@ with open(r"C:\ETL\Target\targetinputcsv01.csv", mode='r') as csv_inputfile:
             #  assume application names are comma+space seperated and convert to list
             applist = list(appname.split(", "))
             if appname =='':
-                # appname is blank so output row as is
+                # appname is blank so write output row as is
                 writerow(row)
                 output_row_count +=1
             else:
@@ -48,7 +48,7 @@ with open(r"C:\ETL\Target\targetinputcsv01.csv", mode='r') as csv_inputfile:
                     listcount +=1
                 
             input_row_count +=1
-            
+
     print(f'Read and Processed {input_row_count} input rows in the input CSV file')
     print(f'Processed {app_count} applications in the input CSV file')
     print(f'Wrote {output_row_count} output rows in the output CSV file')
