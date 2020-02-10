@@ -1,0 +1,38 @@
+{
+    “Version”: “2012-10-17",
+    “Id”: “PolicytoDenyBucketDelete",
+    “Statement”: [
+      {
+        “Sid”: “DenyS3BucketDelete”,
+        “Effect”: “Deny”,
+        “Principal”: "*"
+        “Action”: [
+          “s3:DeleteBucket”,
+          “s3:DeleteBucketPolicy”,
+          “s3:DeleteObject”
+        ],
+        “Resource”: “arn:aws:s3:::junkshon-data-in/*”,
+      }
+    ]
+   }
+
+{
+  "Id": "PolicytoDenyBucketDelete",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyS3BucketDelete",
+      "Action": [
+        "s3:DeleteBucket",
+        "s3:DeleteBucketPolicy",
+        "s3:DeleteObject",
+        "s3:DeleteObjectTagging",
+        "s3:DeleteObjectVersion",
+        "s3:DeleteObjectVersionTagging"
+      ],
+      "Effect": "Deny",
+      "Resource": "arn:aws:s3:::junkshon-data-in",
+      "Principal": "*"
+    }
+  ]
+}
